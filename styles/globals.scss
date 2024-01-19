@@ -7,4 +7,16 @@ body {
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: underline;
 }
