@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+}
+
+.content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 2;
+}
+
+.title,
+.subtitle,
+.link__url,
+.description {
+  color: #fff;
+}
+
+.subtitle,
+.link__url,
+.description {
+  font-size: 12px;
+}
+
+.title {
+  line-height: 100%;
+}
+
+.link {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  &__url {
+    font-style: italic;
+    word-break: break-all;
+  }
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex: 1;
+  img {
+    display: block;
+    width: 100%;
+    max-width: max-content;
+  }
+}
