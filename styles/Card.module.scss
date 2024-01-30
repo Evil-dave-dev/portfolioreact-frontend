@@ -3,11 +3,13 @@
 }
 
 .content {
-  padding: 15px;
+  position: inherit;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 0.7rem;
   flex: 2;
+  z-index: 2;
 }
 
 .title,
@@ -20,17 +22,16 @@
 .subtitle,
 .link__url,
 .description {
-  font-size: 12px;
-}
-
-.title {
-  line-height: 100%;
+  font-size: 1.2rem;
 }
 
 .link {
   display: flex;
-  gap: 4px;
+  gap: 0.8rem;
   align-items: center;
+  &__logo {
+    flex: 0 0 30px;
+  }
   &__url {
     font-style: italic;
     word-break: break-all;
@@ -38,13 +39,15 @@
 }
 
 .logo {
+  position: relative;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
   flex: 1;
   img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
     display: block;
-    width: 100%;
+    width: 15rem;
     max-width: max-content;
   }
 }

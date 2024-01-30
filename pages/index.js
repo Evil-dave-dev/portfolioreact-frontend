@@ -1,29 +1,45 @@
+import React, { useEffect, useState } from "react";
 import styles from "../styles/Home.module.scss";
 import Card from "../components/Card";
+import Modal from "../components/Modal";
 
 function Index() {
+  const [projects, setProjects] = useState([]);
+  const openModal = () => console.log("click");
+
+  useEffect(() => {
+    fetch("https://portfolioreact-backend.vercel.app/projects")
+      .then((response) => response.json())
+      .then((data) => {
+        setProjects(
+          data.res.map((e, index) => {
+            return (
+              <>
+                <Card
+                  key={index}
+                  name={e.name}
+                  subName={e.subName}
+                  link={e.link}
+                  description={e.description}
+                  background={e.background}
+                  logo={e.logo}
+                  onClick={openModal}
+                />
+              </>
+            );
+          })
+        );
+      })
+      .catch((error) => {
+        console.error("Error: ", error);
+      });
+  }, []);
+
   return (
     <main className={styles.main}>
       <h1 className={styles.title}>portfolio David</h1>
       <section className={styles.projects__container}>
-        <div className={styles.projects__content}>
-          <Card
-            name="tickethack"
-            subName="(projet de formation)"
-            link="https://github.com/Evil-dave-dev/tickethack-frontend"
-            description="tickethack est une une application d'achat de ticket de train en ligne"
-            background="#AB2346"
-            logo="train"
-          />
-          <Card
-            name="recipe shop"
-            subName="(projet de formation)"
-            link="https://github.com/VictorHazebrouck/recipe-shop-frontend"
-            description="recipe shop est une app React native qui gère une liste de course pour l'utilisateur à partir de recettes proposées"
-            background="#188FA7"
-            logo="recipe"
-          />
-        </div>
+        <div className={styles.projects__content}>{projects}</div>
       </section>
     </main>
   );

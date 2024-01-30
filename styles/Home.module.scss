@@ -1,3 +1,5 @@
+@import "breakpoints";
+
 .main {
   min-height: 100vh;
 }
@@ -9,12 +11,23 @@
 .projects {
   &__container {
     width: 100vw;
-    padding: 0 2rem;
+    @include media-breakpoint-up($breakpoint-sm) {
+      padding: 0 2rem;
+    }
   }
   &__content {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     gap: 1rem;
     margin: 2rem 0;
+    @include media-breakpoint-up($breakpoint-sm) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+    @include media-breakpoint-up($breakpoint-lg) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+    }
   }
 }
