@@ -11,7 +11,7 @@
 .projects {
   &__container {
     width: 100vw;
-    @include media-breakpoint-up($breakpoint-sm) {
+    @include media-breakpoint-up($breakpoint-md) {
       padding: 0 2rem;
     }
   }
@@ -21,13 +21,17 @@
     grid-template-rows: 1fr 1fr 1fr;
     gap: 1rem;
     margin: 2rem 0;
-    @include media-breakpoint-up($breakpoint-sm) {
+    @include media-breakpoint-up($breakpoint-md) {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
     }
-    @include media-breakpoint-up($breakpoint-lg) {
+    @include media-breakpoint-up($breakpoint-xl) {
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 1fr;
     }
   }
+}
+
+.open {
+  opacity: 1;
 }

@@ -8,9 +8,44 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
   z-index: 3;
 }
 .content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   background-color: #fff;
   padding: 2rem;
+  max-width: calc(100vw - 4rem);
+  max-height: calc(100vh - 4rem);
+  overflow-y: scroll;
+}
+
+.close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 100%;
+}
+
+.subName,
+.description,
+.link {
+  font-size: 1.4rem;
+}
+
+.link {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.text,
+.img {
+  width: 100%;
+  max-width: 60rem;
 }

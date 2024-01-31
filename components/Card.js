@@ -2,10 +2,15 @@ import React, { useState } from "react";
 import styles from "../styles/Card.module.scss";
 
 const Card = (props) => {
+  const handleClick = () => {
+    props.openModal(props);
+  };
+
   return (
     <div
       className={styles.container}
       style={{ backgroundColor: props.background }}
+      onClick={() => handleClick()}
     >
       <div className={styles.content}>
         <div>
@@ -32,9 +37,7 @@ const Card = (props) => {
               fill="#fff"
             />
           </svg>
-          <a className={styles.link__url} href={props.link} target="_blank">
-            {props.link}
-          </a>
+          <p className={styles.link__url}>{props.link}</p>
         </div>
         <p className={styles.description}>{props.description}</p>
       </div>
