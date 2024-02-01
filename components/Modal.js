@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import styles from "../styles/Modal.module.scss";
 
 const Modal = (props) => {
@@ -15,6 +15,19 @@ const Modal = (props) => {
   const handleClose = () => {
     props.closeModal(props.name);
   };
+
+  useEffect(() => {
+    fetch("https://portfolioreact-backend.vercel.app/img")
+      .then((response) => response.json())
+      .then((data) => {
+        data.photos.map((src, index) => {
+          return <img key={index} src={src} />;
+        });
+      })
+      .catch((error) => {
+        console.error("Error: ", error);
+      });
+  }, []);
 
   return (
     <div
