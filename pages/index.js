@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import styles from "../styles/Home.module.scss";
 import Card from "../components/Card";
 import Modal from "../components/Modal";
+import Navbar from "../components/Navbar";
+import Button from "../components/Button";
 
 function Index() {
   const [projects, setProjects] = useState([]);
@@ -43,8 +45,22 @@ function Index() {
 
   return (
     <main className={styles.main}>
-      <h1 className={styles.title}>portfolio David</h1>
-      <section className={styles.projects__container}>
+      <Navbar />
+      <section className={styles.presentation} id="presentation">
+        <h5 className={styles.name}>david stevenoot</h5>
+        <h1 className={styles.title}>frontend developer</h1>
+        <p>
+          Développeur web Lillois de 39 ans, j'ai effectué une reconversion
+          professionnelle en 2017. Je suis devenu intégrateur Web chez KIMPLE
+          puis développeur frontend chez REEZOCAR. En 2023, j'ai effectué une
+          formation en fullstack à La Capsule, je maitrise maintenant les
+          services backend ainsi que la gestion de base de données, webservices
+          et API. Je cherche acutellement un poste de développeur frontend sur
+          Lille.
+        </p>
+        <Button content="découvrir" link="#projets" />
+      </section>
+      <section className={styles.projects__container} id="projets">
         <div className={styles.projects__content}>{projects}</div>
         {selectedProject && (
           <Modal
@@ -57,6 +73,7 @@ function Index() {
           />
         )}
       </section>
+      <section id="skills"></section>
     </main>
   );
 }

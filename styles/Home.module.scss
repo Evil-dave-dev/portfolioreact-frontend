@@ -1,18 +1,28 @@
 @import "breakpoints";
 
 .main {
+  width: 100vw;
   min-height: 100vh;
+  padding-top: 3.4rem;
 }
 
-.title {
-  font-size: 4rem;
+.presentation {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  width: 100%;
+}
+
+.name {
+  color: #ce4760;
 }
 
 .projects {
   &__container {
-    width: 100vw;
+    width: 100%;
     @include media-breakpoint-up($breakpoint-md) {
-      padding: 0 2rem;
+      padding: 2rem;
     }
   }
   &__content {
