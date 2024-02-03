@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/Home.module.scss";
-import Card from "../components/Card";
-import Modal from "../components/Modal";
-import Navbar from "../components/Navbar";
-import Button from "../components/Button";
+import { Card, Modal, Navbar, Button } from "../components";
 
 function Index() {
   const [projects, setProjects] = useState([]);
