@@ -1,51 +1,55 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { Project, Modal, Navbar, Button } from "../components";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import styles from "../styles/Home.module.scss";
-import { Card, Modal, Navbar, Button } from "../components";
 
 function Index() {
-  const [projects, setProjects] = useState([]);
-  const [selectedProject, setSelectedProject] = useState(null);
-
-  const openModal = (e) => {
-    setSelectedProject(e);
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 992 },
+      items: 3,
+    },
+    breakpointSm: {
+      breakpoint: { max: 992, min: 576 },
+      items: 2,
+    },
+    breakpointXs: {
+      breakpoint: { max: 576, min: 0 },
+      items: 1,
+    },
   };
 
-  const closeModal = () => {
-    setSelectedProject(null);
-  };
+  const projectData = [
+    {
+      id: 1,
+      imageurl: "hackatweet.png",
+      name: "hackatweet",
+    },
+    {
+      id: 2,
+      imageurl: "recipeshop.png",
+      name: "recipeshop",
+    },
+    {
+      id: 3,
+      imageurl: "tickethack.png",
+      name: "tickethack",
+    },
+  ];
 
-  useEffect(() => {
-    fetch("https://portfolioreact-backend.vercel.app/projects")
-      .then((response) => response.json())
-      .then((data) => {
-        setProjects(
-          data.res.map((project, index) => {
-            return (
-              <Card
-                key={index}
-                name={project.name}
-                subName={project.subName}
-                link={project.link}
-                description={project.description}
-                background={project.background}
-                logo={project.logo}
-                openModal={openModal}
-              />
-            );
-          })
-        );
-      })
-      .catch((error) => {
-        console.error("Error: ", error);
-      });
-  }, []);
+  const project = projectData.map((item) => (
+    <Project name={item.name} url={item.imageurl} />
+  ));
 
   return (
     <main className={styles.main}>
       <Navbar />
       <section className={styles.presentation} id="presentation">
-        <h5 className={styles.name}>david stevenoot</h5>
-        <h1 className={styles.title}>frontend developer</h1>
+        <div>
+          <h2 className={styles.name}>david stevenoot</h2>
+          <h1 className={styles.title}>frontend developer</h1>
+        </div>
         <p>
           Développeur web Lillois de 39 ans, j'ai effectué une reconversion
           professionnelle en 2017. Je suis devenu intégrateur Web chez KIMPLE
@@ -58,17 +62,7 @@ function Index() {
         <Button content="découvrir" link="#projets" />
       </section>
       <section className={styles.projects__container} id="projets">
-        <div className={styles.projects__content}>{projects}</div>
-        {selectedProject && (
-          <Modal
-            closeModal={closeModal}
-            name={selectedProject.name}
-            subName={selectedProject.subName}
-            link={selectedProject.link}
-            description={selectedProject.description}
-            style={{ opacity: selectedProject ? 1 : 0 }}
-          />
-        )}
+        <Carousel responsive={responsive}>{project}</Carousel>
       </section>
       <section id="skills"></section>
     </main>

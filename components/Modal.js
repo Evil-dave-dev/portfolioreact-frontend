@@ -1,9 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import styles from "../styles/Modal.module.scss";
 
 const Modal = (props) => {
+  const [img, setImg] = useState([]);
   const modalRef = useRef();
 
   const handleClick = (event) => {
@@ -17,16 +18,22 @@ const Modal = (props) => {
   };
 
   useEffect(() => {
-    fetch("https://portfolioreact-backend.vercel.app/img")
-      .then((response) => response.json())
-      .then((data) => {
-        data.photos.map((src, index) => {
-          return <img key={index} src={src} />;
-        });
-      })
-      .catch((error) => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://portfolioreact-backend.vercel.app/img"
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch");
+        }
+        const data = await response.json();
+        setPhotos(data.photos);
+      } catch (error) {
         console.error("Error: ", error);
-      });
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (
@@ -49,10 +56,7 @@ const Modal = (props) => {
           className={styles.close}
           onClick={(event) => handleClose(event)}
         />
-        <img src="01.jpg" className={styles.img} />
-        <img src="02.jpg" className={styles.img} />
-        <img src="03.jpg" className={styles.img} />
-        <img src="04.jpg" className={styles.img} />
+        {img}
       </div>
     </div>
   );

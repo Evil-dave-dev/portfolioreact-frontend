@@ -25,21 +25,6 @@
       padding: 2rem;
     }
   }
-  &__content {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 1rem;
-    margin: 2rem 0;
-    @include media-breakpoint-up($breakpoint-md) {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-    }
-    @include media-breakpoint-up($breakpoint-xl) {
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr;
-    }
-  }
 }
 
 .open {
