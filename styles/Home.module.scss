@@ -21,7 +21,7 @@
 .projects {
   &__container {
     width: 100%;
-    @include media-breakpoint-up($breakpoint-md) {
+    @include media-breakpoint-up($breakpoint-sm) {
       padding: 2rem;
     }
   }

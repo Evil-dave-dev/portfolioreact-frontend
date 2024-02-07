@@ -5,7 +5,7 @@ const Project = (props) => {
   return (
     <div className={styles.card}>
       <img src={props.url} alt={props.name} className={styles.card__img} />
-      <h2>{props.name}</h2>
+      <h2 className={styles.card__name}>{props.name}</h2>
     </div>
   );
 };
