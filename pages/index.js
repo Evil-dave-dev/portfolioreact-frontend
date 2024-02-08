@@ -3,11 +3,20 @@ import { Project, Modal, Navbar, Button } from "../components";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import styles from "../styles/Home.module.scss";
-import { projectData, responsive } from "./data";
+import { projectData, responsive } from "../data/data";
 
 function Index() {
+  const handleModalData = (imageurl) => {
+    console.log(imageurl);
+  };
+
   const project = projectData.map((item, index) => (
-    <Project name={item.name} url={item.imageurl} key={index} />
+    <Project
+      name={item.name}
+      url={item.imageurl}
+      key={index}
+      modalData={() => handleModalData(item.imageurl)}
+    />
   ));
 
   return (

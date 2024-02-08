@@ -1,5 +1,4 @@
 .card {
-  background-color: red;
   height: 100%;
   &__img {
     width: 100%;
@@ -11,5 +10,22 @@
     bottom: 2rem;
     left: 2rem;
     color: #fff;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 1;
+  }
+  &::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background-color: rgba(47, 47, 47, 0.28);
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  &:hover {
+    &::after {
+      background-color: rgba(47, 47, 47, 0.58);
+    }
+    .card__name {
+      transform: translateY(-1rem) scale(1.1);
+    }
   }
 }
