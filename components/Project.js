@@ -3,7 +3,7 @@ import styles from "../styles/Project.module.scss";
 
 const Project = (props) => {
   const handleClick = () => {
-    props.modalData();
+    props.openModal();
   };
 
   return (

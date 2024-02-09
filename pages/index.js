@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Project, Modal, Navbar, Button } from "../components";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -6,8 +6,16 @@ import styles from "../styles/Home.module.scss";
 import { projectData, responsive } from "../data/data";
 
 function Index() {
-  const handleModalData = (imageurl) => {
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = (imageurl) => {
     console.log(imageurl);
+    setShowModal(true);
+  };
+
+  const closeModal = (imageurl) => {
+    console.log(name);
+    setShowModal(false);
   };
 
   const project = projectData.map((item, index) => (
@@ -15,7 +23,7 @@ function Index() {
       name={item.name}
       url={item.imageurl}
       key={index}
-      modalData={() => handleModalData(item.imageurl)}
+      openModal={() => openModal(item.imageurl)}
     />
   ));
 
@@ -44,6 +52,7 @@ function Index() {
         </Carousel>
       </section>
       <section id="skills"></section>
+      {showModal && <Modal closeModal={() => closeModal()} />}
     </main>
   );
 }
