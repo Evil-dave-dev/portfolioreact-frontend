@@ -9,12 +9,11 @@ function Index() {
   const [showModal, setShowModal] = useState(false);
 
   const openModal = (imageurl) => {
-    console.log(imageurl);
+    console.log(imageurl.url01, imageurl.url02, imageurl.url03);
     setShowModal(true);
   };
 
   const closeModal = (imageurl) => {
-    console.log(name);
     setShowModal(false);
   };
 
@@ -23,7 +22,7 @@ function Index() {
       name={item.name}
       url={item.imageurl}
       key={index}
-      openModal={() => openModal(item.imageurl)}
+      openModal={() => openModal(item)}
     />
   ));
 

@@ -4,7 +4,7 @@ import React from "react";
 import styles from "../styles/Modal.module.scss";
 
 const Modal = (props) => {
-  const handleClick = () => {
+  const handleClose = () => {
     props.closeModal();
   };
 
@@ -23,7 +23,7 @@ const Modal = (props) => {
         <FontAwesomeIcon
           icon={faXmark}
           className={styles.close}
-          onClick={(event) => handleClick()}
+          onClick={(event) => handleClose()}
         />
         {/* {img} */}
       </div>
