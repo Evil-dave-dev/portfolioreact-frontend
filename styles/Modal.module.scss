@@ -17,7 +17,7 @@
   padding: 2rem;
   min-width: 50vw;
   min-height: 50vh;
-  width: 60rem;
+  width: 80vw;
   max-width: calc(100vw - 4rem);
   max-height: calc(100vh - 4rem);
   &__text {
@@ -28,6 +28,7 @@
   &__img {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
     overflow-y: auto;
   }
@@ -40,6 +41,7 @@
   font-size: 3rem;
   font-weight: 600;
   line-height: 100%;
+  cursor: pointer;
 }
 
 .link {
@@ -49,6 +51,6 @@
 
 .img {
   max-width: 100%;
-  max-height: 40rem;
+  max-height: 60rem;
   object-fit: contain;
 }

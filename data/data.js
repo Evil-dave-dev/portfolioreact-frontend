@@ -22,7 +22,6 @@ export const projectData = [
       "hackatweet-02.png",
       "hackatweet-03.png",
       "hackatweet-04.png",
-      "hackatweet-05.png",
     ],
     name: "hackatweet",
     description:
