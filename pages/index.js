@@ -7,20 +7,26 @@ import { projectData, responsive } from "../data/data";
 
 function Index() {
   const [showModal, setShowModal] = useState(false);
+  const [modalData, setmodalData] = useState({});
 
-  const openModal = (imageurl) => {
-    console.log(imageurl.url01, imageurl.url02, imageurl.url03);
+  const openModal = (modalData) => {
+    const newModalData = {
+      name: modalData.name,
+      description: modalData.description,
+      imagesUrl: modalData.imagesUrl,
+    };
     setShowModal(true);
+    setmodalData(newModalData);
   };
 
-  const closeModal = (imageurl) => {
+  const closeModal = () => {
     setShowModal(false);
   };
 
   const project = projectData.map((item, index) => (
     <Project
       name={item.name}
-      url={item.imageurl}
+      thumbnailUrl={item.thumbnailUrl}
       key={index}
       openModal={() => openModal(item)}
     />
@@ -51,7 +57,9 @@ function Index() {
         </Carousel>
       </section>
       <section id="skills"></section>
-      {showModal && <Modal closeModal={() => closeModal()} />}
+      {showModal && (
+        <Modal closeModal={() => closeModal()} modalData={modalData} />
+      )}
     </main>
   );
 }

@@ -16,26 +16,32 @@ export const responsive = {
 export const projectData = [
   {
     id: 1,
-    imageurl: "hackatweet.png",
-    url01: "hackatweet-01.png",
-    url02: "hackatweet-02.png",
-    url03: "hackatweet-03.png",
+    thumbnailUrl: "hackatweet.png",
+    imagesUrl: [
+      "hackatweet-01.png",
+      "hackatweet-02.png",
+      "hackatweet-03.png",
+      "hackatweet-04.png",
+      "hackatweet-05.png",
+    ],
     name: "hackatweet",
+    description:
+      "Hackatweet est un projet de formation qui a été développé en 2 jours et qui consiste à recréer un mini Twitter",
   },
   {
     id: 2,
-    imageurl: "recipeshop.png",
-    url01: "recipeshop-01.png",
-    url02: "recipeshop-02.png",
-    url03: "recipeshop-03.png",
+    thumbnailUrl: "recipeshop.png",
+    imagesUrl: ["recipeshop-01.jpg", "recipeshop-02.jpg"],
     name: "recipeshop",
+    description:
+      "Recipe shop est mon projet de fin de formation. Je l'ai développé en 2 semaines et c'est une application en React Native qui sert à gérer une liste de courses. Une base de données de recettes est fourni dans cette même application et en place sur mongoDB.",
   },
   {
     id: 3,
-    imageurl: "tickethack.png",
-    url01: "tickethack-01.png",
-    url02: "tickethack-02.png",
-    url03: "tickethack-03.png",
+    thumbnailUrl: "tickethack.png",
+    imagesUrl: ["tickethack-01.png", "tickethack-02.png", "tickethack-03.png"],
     name: "tickethack",
+    description:
+      "Tickethack est un projet de formation développé en 2 jours, qui consiste à créer une application en React pour acheter des billets de train.",
   },
 ];

@@ -8,7 +8,11 @@ const Project = (props) => {
 
   return (
     <div className={styles.card} onClick={() => handleClick()}>
-      <img src={props.url} alt={props.name} className={styles.card__img} />
+      <img
+        src={props.thumbnailUrl}
+        alt={props.name}
+        className={styles.card__img}
+      />
       <h2 className={styles.card__name}>{props.name}</h2>
     </div>
   );

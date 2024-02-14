@@ -8,24 +8,27 @@ const Modal = (props) => {
     props.closeModal();
   };
 
+  const imgList = props.modalData.imagesUrl.map((item, index) => (
+    <img src={item} key={index} className={styles.img} />
+  ));
+
   return (
     <div className={styles.container} style={props.style}>
       {/* <div className={styles.content} ref={modalRef}> */}
       <div className={styles.content}>
-        <div className={styles.text}>
-          <h4>props.name</h4>
-          <p className={styles.subName}>props.subName</p>
+        <div className={styles.content__text}>
+          <h4>{props.modalData.name}</h4>
           {/* <a href={props.link} target="_blank" className={styles.link}> */}
           {/* {props.link}
           </a> */}
-          <p className={styles.description}>props.description</p>
+          <p className={styles.description}>{props.modalData.description}</p>
         </div>
+        <div className={styles.content__img}>{imgList}</div>
         <FontAwesomeIcon
           icon={faXmark}
           className={styles.close}
           onClick={(event) => handleClose()}
         />
-        {/* {img} */}
       </div>
     </div>
   );
