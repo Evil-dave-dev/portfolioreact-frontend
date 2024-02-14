@@ -14,6 +14,7 @@ function Index() {
       name: modalData.name,
       description: modalData.description,
       imagesUrl: modalData.imagesUrl,
+      link: modalData.link,
     };
     setShowModal(true);
     setmodalData(newModalData);

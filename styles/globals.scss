@@ -92,3 +92,11 @@ button {
   width: auto;
   overflow: visible;
 }
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cacaca;
+}
