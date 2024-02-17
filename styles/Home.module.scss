@@ -20,6 +20,7 @@
 
 .projects {
   &__container {
+    position: relative;
     width: 100%;
     @include media-breakpoint-up($breakpoint-sm) {
       padding: 2rem;

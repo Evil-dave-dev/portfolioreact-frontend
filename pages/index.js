@@ -53,7 +53,12 @@ function Index() {
         <Button content="découvrir" link="#projets" />
       </section>
       <section className={styles.projects__container} id="projets">
-        <Carousel infinite={true} responsive={responsive}>
+        <Carousel
+          infinite={true}
+          responsive={responsive}
+          showDots={true}
+          renderDotsOutside={true}
+        >
           {project}
         </Carousel>
       </section>
