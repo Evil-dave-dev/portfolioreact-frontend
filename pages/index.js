@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import { Project, Modal, Navbar, Button, Card } from "../components";
 import "react-multi-carousel/lib/styles.css";
 import styles from "../styles/Home.module.scss";
-import { projectData, responsive } from "../data/data";
+import {
+  projectData,
+  experienceData,
+  responsiveProject,
+  responsiveExperience,
+} from "../data/data";
 
 import Carousel from "react-multi-carousel";
 
@@ -34,26 +39,29 @@ function Index() {
     />
   ));
 
+  const experience = experienceData.map((item, index) => (
+    <Card name={item.name} description={item.description} key={index} />
+  ));
+
   return (
     <main className={styles.main}>
       <Navbar />
       <section className={styles.presentation} id="presentation">
         <h2 className={styles.primary}>david stevenoot</h2>
         <h1 className={styles.title}>frontend developer</h1>
-        <Button content="découvrir" link="#projets" />
+        <Button content="découvrir" link="#project" />
       </section>
-      <section className={styles.projects} id="projets">
-        <Carousel infinite={true} responsive={responsive}>
+      <section className={styles.projects} id="project">
+        <Carousel infinite={true} responsive={responsiveProject}>
           {project}
         </Carousel>
       </section>
-      <section id="parcours" className={styles.parcours}>
+      <section className={styles.parcours} id="parcours">
         <h3 className={styles.parcours__title}>
           expériences <span className={styles.primary}>professionnelles</span>
         </h3>
-        <Carousel infinite={true} responsive={responsive}>
-          <Card name="kimple" description="lorem ipsum" />
-          <Card name="reezocar" description="lorem ipsum" />
+        <Carousel responsive={responsiveExperience} arrows={false} centerMode>
+          {experience}
         </Carousel>
       </section>
       {showModal && (

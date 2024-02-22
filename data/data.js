@@ -1,4 +1,4 @@
-export const responsive = {
+export const responsiveProject = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 992 },
     items: 3,
@@ -45,5 +45,30 @@ export const projectData = [
     description:
       "Tickethack est un projet de formation développé en 2 jours, qui consiste à créer une application en React pour acheter des billets de train.",
     link: "https://github.com/Evil-dave-dev/tickethack-frontend",
+  },
+];
+
+export const responsiveExperience = {
+  breakpointSm: {
+    breakpoint: { max: 4000, min: 576 },
+    items: 2,
+  },
+  breakpointXs: {
+    breakpoint: { max: 576, min: 0 },
+    items: 1,
+    slidesToSlide: 1,
+  },
+};
+
+export const experienceData = [
+  {
+    name: "kimple",
+    description:
+      "Kimple est une solution marketing en mode SAAS qui permet, grâce au jeu marketing, de capturer les données et de renforcer la connaissance de vos clients.",
+  },
+  {
+    name: "reezocar",
+    description:
+      "Reezocar regroupe des millions de petites annonces auto en Europe : trouvez une voiture d'occasion, un leasing ou une voiture neuve au meilleur prix.",
   },
 ];

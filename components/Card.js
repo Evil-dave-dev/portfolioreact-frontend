@@ -8,8 +8,10 @@ const Card = (props) => {
       <div className={styles.logo}>
         <img alt="logo" src="logo.png" />
       </div>
-      <h4>{props.name}</h4>
-      <p>{props.description}</p>
+      <div className={styles.content}>
+        <h4>{props.name}</h4>
+        <p className={styles.description}>{props.description}</p>
+      </div>
       <Button content="en savoir plus" />
     </div>
   );

@@ -15,7 +15,7 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#projets" className={styles.link}>
+            <a href="#project" className={styles.link}>
               projets
             </a>
           </li>
