@@ -1,9 +1,10 @@
+@import "variables";
+
 .container {
   font-family: "Khand", sans-serif;
   font-weight: 600;
   font-size: 2rem;
-  background-color: #ce4760;
-  color: #fff;
+  background-color: $primary;
   padding: 1rem 3rem;
   max-width: fit-content;
   text-decoration: none;

@@ -1,3 +1,5 @@
+@import "variables";
+
 .container {
   position: fixed;
   inset: 0;
@@ -13,7 +15,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  background-color: #fff;
+  background-color: $bg-primary;
   padding: 2rem;
   min-width: 50vw;
   min-height: 50vh;

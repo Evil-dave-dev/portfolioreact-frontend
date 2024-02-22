@@ -1,4 +1,5 @@
 @import "breakpoints";
+@import "variables";
 
 .main {
   width: 100vw;
@@ -10,24 +11,33 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 2rem;
+  padding: 2rem 2rem 4rem;
   width: 100%;
+  background-color: $bg-primary;
 }
 
-.name {
-  color: #ce4760;
+.primary {
+  color: $primary;
 }
 
 .projects {
-  &__container {
-    position: relative;
-    width: 100%;
-    @include media-breakpoint-up($breakpoint-sm) {
-      padding: 2rem;
-    }
-  }
+  background-color: $bg-secondary;
+  position: relative;
+  width: 100%;
+  padding: 2rem 0;
 }
 
 .open {
   opacity: 1;
+}
+
+.parcours {
+  background-color: $bg-primary;
+  padding: 2rem 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  &__title {
+    text-align: center;
+  }
 }
