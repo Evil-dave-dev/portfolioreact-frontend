@@ -27,17 +27,19 @@
   padding: 2rem 0;
 }
 
-.open {
-  opacity: 1;
-}
-
 .parcours {
   background-color: $bg-primary;
   padding: 2rem 2rem 4rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 6rem;
   &__title {
     text-align: center;
+  }
+  &__content {
+    display: flex;
+    gap: 2rem;
+    overflow-x: scroll;
+    overflow-y: visible;
   }
 }

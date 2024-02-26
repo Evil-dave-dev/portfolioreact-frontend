@@ -48,18 +48,6 @@ export const projectData = [
   },
 ];
 
-export const responsiveExperience = {
-  breakpointSm: {
-    breakpoint: { max: 4000, min: 576 },
-    items: 2,
-  },
-  breakpointXs: {
-    breakpoint: { max: 576, min: 0 },
-    items: 1,
-    slidesToSlide: 1,
-  },
-};
-
 export const experienceData = [
   {
     name: "kimple",

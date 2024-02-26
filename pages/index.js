@@ -60,9 +60,7 @@ function Index() {
         <h3 className={styles.parcours__title}>
           expériences <span className={styles.primary}>professionnelles</span>
         </h3>
-        <Carousel responsive={responsiveExperience} arrows={false} centerMode>
-          {experience}
-        </Carousel>
+        <div className={styles.parcours__content}>{experience}</div>
       </section>
       {showModal && (
         <Modal closeModal={() => closeModal()} modalData={modalData} />
