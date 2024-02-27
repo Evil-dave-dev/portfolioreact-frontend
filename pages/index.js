@@ -40,7 +40,9 @@ function Index() {
   ));
 
   const experience = experienceData.map((item, index) => (
-    <Card name={item.name} description={item.description} key={index} />
+    <div key={index} className={styles.parcours__item}>
+      <Card name={item.name} description={item.description} />
+    </div>
   ));
 
   return (
