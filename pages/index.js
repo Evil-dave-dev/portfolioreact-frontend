@@ -2,12 +2,7 @@ import React, { useState } from "react";
 import { Project, Modal, Navbar, Button, Card } from "../components";
 import "react-multi-carousel/lib/styles.css";
 import styles from "../styles/Home.module.scss";
-import {
-  projectData,
-  experienceData,
-  responsiveProject,
-  responsiveExperience,
-} from "../data/data";
+import { projectData, experienceData, responsiveProject } from "../data/data";
 
 import Carousel from "react-multi-carousel";
 
@@ -60,9 +55,14 @@ function Index() {
       </section>
       <section className={styles.parcours} id="parcours">
         <h3 className={styles.parcours__title}>
-          expériences <span className={styles.primary}>professionnelles</span>
+          experiences <span className={styles.primary}>professionnelles</span>
         </h3>
         <div className={styles.parcours__content}>{experience}</div>
+      </section>
+      <section className={styles.skills} id="skills">
+        <h3 className={styles.parcours__title}>
+          competences <span className={styles.primary}>techniques</span>
+        </h3>
       </section>
       {showModal && (
         <Modal closeModal={() => closeModal()} modalData={modalData} />

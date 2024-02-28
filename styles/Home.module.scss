@@ -4,7 +4,7 @@
 .main {
   width: 100vw;
   min-height: 100vh;
-  padding-top: 5rem;
+  margin-top: 5rem;
 }
 
 .presentation {
@@ -33,14 +33,14 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  &__title {
-    text-align: center;
-  }
   &__content {
     display: flex;
     gap: 2rem;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     @include media-breakpoint-up($breakpoint-md) {
       justify-content: center;
     }
@@ -54,4 +54,12 @@
       flex: 0 0 28rem;
     }
   }
+}
+
+.skills {
+  background-color: $bg-secondary;
+  padding: 2rem 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }

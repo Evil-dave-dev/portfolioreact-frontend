@@ -31,7 +31,7 @@ export const projectData = [
   {
     id: 2,
     thumbnailUrl: "recipeshop.png",
-    imagesUrl: ["recipeshop-01.jpg", "recipeshop-02.jpg"],
+    imagesUrl: ["recipeshop-01.png"],
     name: "recipeshop",
     description:
       "Recipe shop est mon projet de fin de formation. Je l'ai développé en 2 semaines et c'est une application en React Native qui sert à gérer une liste de courses. Une base de données de recettes est fourni dans cette même application et en place sur mongoDB.",
