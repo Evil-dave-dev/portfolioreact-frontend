@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Project, Modal, Navbar, Button, Card } from "../components";
+import { JavascriptSvg, ReactSvg, NodeSvg, MongoSvg } from "../svg";
+import { projectData, experienceData, responsiveProject } from "../data/data";
 import "react-multi-carousel/lib/styles.css";
 import styles from "../styles/Home.module.scss";
-import { projectData, experienceData, responsiveProject } from "../data/data";
 
 import Carousel from "react-multi-carousel";
 
@@ -21,6 +22,8 @@ function Index() {
     setmodalData(newModalData);
   };
 
+  const handleClick = () => console.log("click");
+
   const closeModal = () => {
     setShowModal(false);
   };
@@ -36,7 +39,11 @@ function Index() {
 
   const experience = experienceData.map((item, index) => (
     <div key={index} className={styles.parcours__item}>
-      <Card name={item.name} description={item.description} />
+      <Card
+        name={item.name}
+        description={item.description}
+        handleClick={() => handleClick()}
+      />
     </div>
   ));
 
@@ -63,6 +70,12 @@ function Index() {
         <h3 className={styles.parcours__title}>
           competences <span className={styles.primary}>techniques</span>
         </h3>
+        <div className={styles.skills__content}>
+          <JavascriptSvg />
+          <ReactSvg />
+          <NodeSvg />
+          <MongoSvg />
+        </div>
       </section>
       {showModal && (
         <Modal closeModal={() => closeModal()} modalData={modalData} />

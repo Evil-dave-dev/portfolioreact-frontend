@@ -2,9 +2,14 @@
 @import "variables";
 
 .main {
-  width: 100vw;
-  min-height: 100vh;
   margin-top: 5rem;
+}
+
+.presentation,
+.projects,
+.parcours,
+.skills {
+  width: 100%;
 }
 
 .presentation {
@@ -12,7 +17,6 @@
   flex-direction: column;
   gap: 2rem;
   padding: 2rem 2rem 4rem;
-  width: 100%;
   background-color: $bg-primary;
 }
 
@@ -23,7 +27,6 @@
 .projects {
   background-color: $bg-secondary;
   position: relative;
-  width: 100%;
   padding: 2rem 0;
 }
 

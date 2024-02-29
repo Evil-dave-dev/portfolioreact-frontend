@@ -53,10 +53,12 @@ export const experienceData = [
     name: "kimple",
     description:
       "Kimple est une solution marketing en mode SAAS qui permet, grâce au jeu marketing, de capturer les données et de renforcer la connaissance de vos clients.",
+    imagesUrl: "kimple.png",
   },
   {
     name: "reezocar",
     description:
       "Reezocar regroupe des millions de petites annonces auto en Europe : trouvez une voiture d'occasion, un leasing ou une voiture neuve au meilleur prix.",
+    imagesUrl: "reezocar.png",
   },
 ];

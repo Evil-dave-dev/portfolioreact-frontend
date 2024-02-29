@@ -3,7 +3,7 @@ import Button from "./Button";
 import styles from "../styles/Card.module.scss";
 
 const Card = (props) => {
-  console.log(props);
+  const handleClick = () => console.log(props);
 
   return (
     <div className={styles.container}>
@@ -14,7 +14,7 @@ const Card = (props) => {
         <h4>{props.name}</h4>
         <p className={styles.description}>{props.description}</p>
       </div>
-      <Button content="en savoir plus" openModal={"test"} />
+      <Button content="en savoir plus" handleClick={handleClick} />
     </div>
   );
 };
