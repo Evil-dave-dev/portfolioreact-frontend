@@ -97,6 +97,15 @@ h5 {
   }
 }
 
+h6 {
+  font-size: $h6-mobile;
+  line-height: $h6-mobile;
+  @include media-breakpoint-up($breakpoint-md) {
+    font-size: $h6-desktop;
+    line-height: $h6-desktop;
+  }
+}
+
 p {
   font-size: $p-mobile;
   @include media-breakpoint-up($breakpoint-md) {

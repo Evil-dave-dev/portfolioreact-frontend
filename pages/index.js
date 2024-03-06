@@ -68,17 +68,17 @@ function Index() {
         <div className={styles.parcours__content}>{experience}</div>
       </section>
       <section className={styles.skills} id="skills">
-        <h3 className={styles.parcours__title}>
+        <h3 className={styles.skills__title}>
           competences <span className={styles.primary}>techniques</span>
         </h3>
         <div className={styles.skills__content}>
           <Skills
-            svg={<JavascriptSvg width="70" height="70" />}
+            svg={<JavascriptSvg width="60" height="60" />}
             name="Javascript"
           />
-          <Skills svg={<ReactSvg width="70" height="70" />} name="React" />
-          <Skills svg={<NodeSvg width="70" height="70" />} name="Node JS" />
-          <Skills svg={<MongoSvg width="70" height="70" />} name="MongoDB" />
+          <Skills svg={<ReactSvg width="60" height="60" />} name="React" />
+          <Skills svg={<NodeSvg width="60" height="60" />} name="Node JS" />
+          <Skills svg={<MongoSvg width="60" height="60" />} name="MongoDB" />
         </div>
       </section>
       {showModal && (

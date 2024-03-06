@@ -1,12 +1,18 @@
+@import "breakpoints";
 @import "variables";
 
 .container {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 2rem;
-  background-color: $bg-primary;
-  padding: 2rem 3rem;
-  width: 22rem;
+  gap: 1rem;
+  flex: 0 0 12rem;
+  //   background-color: red;
+  @include media-breakpoint-up($breakpoint-md) {
+    flex: 0 0 20rem;
+    flex-direction: row;
+  }
   &__name {
     color: #fff;
   }
