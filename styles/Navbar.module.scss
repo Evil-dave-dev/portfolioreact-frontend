@@ -9,6 +9,7 @@
   gap: 1rem;
   background-color: $bg-primary;
   padding: 1rem 2rem 0;
+  z-index: 1001;
   &__link {
     display: flex;
     justify-content: space-between;

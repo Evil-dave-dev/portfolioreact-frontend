@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Project, Modal, Navbar, Button, Card } from "../components";
+import { Project, Modal, Navbar, Button, Card, Skills } from "../components";
 import { JavascriptSvg, ReactSvg, NodeSvg, MongoSvg } from "../svg";
 import { projectData, experienceData, responsiveProject } from "../data/data";
 import "react-multi-carousel/lib/styles.css";
@@ -42,6 +42,7 @@ function Index() {
       <Card
         name={item.name}
         description={item.description}
+        imagesUrl={item.imagesUrl}
         handleClick={() => handleClick()}
       />
     </div>
@@ -71,10 +72,13 @@ function Index() {
           competences <span className={styles.primary}>techniques</span>
         </h3>
         <div className={styles.skills__content}>
-          <JavascriptSvg />
-          <ReactSvg />
-          <NodeSvg />
-          <MongoSvg />
+          <Skills
+            svg={<JavascriptSvg width="70" height="70" />}
+            name="Javascript"
+          />
+          <Skills svg={<ReactSvg width="70" height="70" />} name="React" />
+          <Skills svg={<NodeSvg width="70" height="70" />} name="Node JS" />
+          <Skills svg={<MongoSvg width="70" height="70" />} name="MongoDB" />
         </div>
       </section>
       {showModal && (

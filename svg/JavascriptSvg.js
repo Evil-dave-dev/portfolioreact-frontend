@@ -1,9 +1,9 @@
 import React from "react";
 
-const JavascriptSvg = () => (
+const JavascriptSvg = (props) => (
   <svg
-    width="200px"
-    height="200px"
+    width={props.width}
+    height={props.height}
     viewBox="0 0 256 256"
     xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="xMinYMin meet"
