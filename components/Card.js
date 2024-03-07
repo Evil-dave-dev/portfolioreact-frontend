@@ -1,9 +1,15 @@
 import React from "react";
 import Button from "./Button";
 import styles from "../styles/Card.module.scss";
+import { useDispatch } from "react-redux";
+import { addDataToModal } from "../reducers/modal";
 
 const Card = (props) => {
-  const handleClick = () => console.log(props);
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    console.log(props);
+    dispatch(addDataToModal(props));
+  };
 
   return (
     <div className={styles.container}>
@@ -14,7 +20,11 @@ const Card = (props) => {
         <h4>{props.name}</h4>
         <p className={styles.description}>{props.description}</p>
       </div>
-      <Button content="en savoir plus" handleClick={handleClick} />
+      <Button
+        content="en savoir plus"
+        handleClick={handleClick}
+        secondary={true}
+      />
     </div>
   );
 };

@@ -4,11 +4,20 @@
   font-family: "Khand", sans-serif;
   font-weight: 600;
   font-size: 2rem;
-  background-color: $primary;
   padding: 1rem 3rem;
   max-width: fit-content;
   text-decoration: none;
+  cursor: pointer;
   &:focus {
     text-decoration: none;
   }
+}
+
+.primary {
+  background-color: $primary;
+}
+
+.secondary {
+  color: $primary;
+  border: 0.2rem solid $primary;
 }

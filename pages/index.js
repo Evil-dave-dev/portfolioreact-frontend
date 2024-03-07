@@ -43,7 +43,6 @@ function Index() {
         name={item.name}
         description={item.description}
         imagesUrl={item.imagesUrl}
-        handleClick={() => handleClick()}
       />
     </div>
   ));
