@@ -17,6 +17,10 @@
   position: absolute;
   top: -5rem;
   left: 2rem;
+  &__img {
+    width: 10rem;
+    height: 10rem;
+  }
 }
 
 .content {

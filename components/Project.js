@@ -12,6 +12,7 @@ const Project = (props) => {
         src={props.thumbnailUrl}
         alt={props.name}
         className={styles.container__img}
+        loading="lazy"
       />
       <h2 className={styles.container__name}>{props.name}</h2>
     </div>

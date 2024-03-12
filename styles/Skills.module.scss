@@ -8,7 +8,6 @@
   align-items: center;
   gap: 1rem;
   flex: 0 0 12rem;
-  //   background-color: red;
   @include media-breakpoint-up($breakpoint-md) {
     flex: 0 0 20rem;
     flex-direction: row;

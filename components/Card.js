@@ -14,7 +14,11 @@ const Card = (props) => {
   return (
     <div className={styles.container}>
       <div className={styles.logo}>
-        <img alt={props.name} src={props.imagesUrl} />
+        <img
+          alt={props.name}
+          src={props.imagesUrl}
+          className={styles.logo__img}
+        />
       </div>
       <div className={styles.content}>
         <h4>{props.name}</h4>
