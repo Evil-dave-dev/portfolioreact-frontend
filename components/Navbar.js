@@ -20,7 +20,12 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#parcours" className={styles.link}>
+            <a href="#experiences" className={styles.link}>
+              experiences
+            </a>
+          </li>
+          <li>
+            <a href="#skills" className={styles.link}>
               skills
             </a>
           </li>

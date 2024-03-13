@@ -66,11 +66,11 @@ function Index() {
           {project}
         </Carousel>
       </section>
-      <section className={styles.parcours} id="parcours">
-        <h3 className={styles.parcours__title}>
+      <section className={styles.experiences} id="experiences">
+        <h3 className={styles.experiences__title}>
           experiences <span className={styles.primary}>professionnelles</span>
         </h3>
-        <div className={styles.parcours__content}>{experience}</div>
+        <div className={styles.experiences__content}>{experience}</div>
       </section>
       <section className={styles.skills} id="skills">
         <h3 className={styles.skills__title}>
