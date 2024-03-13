@@ -12,15 +12,35 @@ const Modal = (props) => {
     }
   };
 
-  const imgList = props.modalData.imagesUrl.map((item, index) => (
-    <img src={item} key={index} className={styles.img} />
-  ));
+  let content = null;
 
-  return (
-    <div className={styles.container} onClick={handleClose}>
-      <div className={styles.content} ref={modalRef}>
-        <div className={styles.content__text}>
+  switch (props.modalData.contentType) {
+    case "project":
+      const imgList = props.modalData.imagesUrl.map((item, index) => (
+        <img src={item} key={index} className={styles.img} />
+      ));
+      content = (
+        <>
+          <div className={styles.content__text}>
+            <h4>{props.modalData.name}</h4>
+            <a
+              href={props.modalData.link}
+              target="_blank"
+              className={styles.link}
+            >
+              {props.modalData.link}
+            </a>
+            <p className={styles.description}>{props.modalData.description}</p>
+          </div>
+          <div className={styles.content__img}>{imgList}</div>
+        </>
+      );
+      break;
+    case "experience":
+      content = (
+        <>
           <h4>{props.modalData.name}</h4>
+          <p className={styles.description}>{props.modalData.description}</p>
           <a
             href={props.modalData.link}
             target="_blank"
@@ -28,9 +48,18 @@ const Modal = (props) => {
           >
             {props.modalData.link}
           </a>
-          <p className={styles.description}>{props.modalData.description}</p>
-        </div>
-        <div className={styles.content__img}>{imgList}</div>
+          <img src={props.modalData.imagesUrl} className={styles.img} />
+        </>
+      );
+      break;
+    default:
+      content = <p className={styles.description}>le contenu est inexistant</p>;
+  }
+
+  return (
+    <div className={styles.container} onClick={handleClose}>
+      <div className={styles.content} ref={modalRef}>
+        {content}
         <FontAwesomeIcon
           icon={faXmark}
           className={styles.close}

@@ -8,24 +8,29 @@ import styles from "../styles/Home.module.scss";
 import Carousel from "react-multi-carousel";
 
 function Index() {
-  const [showModal, setShowModal] = useState(false);
+  const [projectModal, setProjectModal] = useState(false);
   const [modalData, setmodalData] = useState({});
 
+  const [experienceModal, setExperienceModal] = useState(false);
+
   const openModal = (modalData) => {
-    const newModalData = {
-      name: modalData.name,
-      description: modalData.description,
-      imagesUrl: modalData.imagesUrl,
-      link: modalData.link,
-    };
-    setShowModal(true);
-    setmodalData(newModalData);
+    if (modalData) {
+      const newModalData = {
+        name: modalData.name,
+        description: modalData.description,
+        imagesUrl: modalData.imagesUrl,
+        link: modalData.link,
+        contentType: modalData.contentType,
+      };
+      setProjectModal(true);
+      setmodalData(newModalData);
+    } else {
+      setExperienceModal(true);
+    }
   };
 
-  const handleClick = () => console.log("click");
-
   const closeModal = () => {
-    setShowModal(false);
+    setProjectModal(false);
   };
 
   const project = projectData.map((item, index) => (
@@ -42,7 +47,8 @@ function Index() {
       <Card
         name={item.name}
         description={item.description}
-        imagesUrl={item.imagesUrl}
+        thumbnailUrl={item.thumbnailUrl}
+        openModal={() => openModal(item)}
       />
     </div>
   ));
@@ -80,7 +86,10 @@ function Index() {
           <Skills svg={<MongoSvg width="60" height="60" />} name="MongoDB" />
         </div>
       </section>
-      {showModal && (
+      {projectModal && (
+        <Modal closeModal={() => closeModal()} modalData={modalData} />
+      )}
+      {experienceModal && (
         <Modal closeModal={() => closeModal()} modalData={modalData} />
       )}
     </main>

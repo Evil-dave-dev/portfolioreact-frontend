@@ -1,14 +1,10 @@
 import React from "react";
 import Button from "./Button";
 import styles from "../styles/Card.module.scss";
-import { useDispatch } from "react-redux";
-import { addDataToModal } from "../reducers/modal";
 
 const Card = (props) => {
-  const dispatch = useDispatch();
   const handleClick = () => {
-    console.log(props);
-    dispatch(addDataToModal(props));
+    props.openModal();
   };
 
   return (
@@ -16,7 +12,7 @@ const Card = (props) => {
       <div className={styles.logo}>
         <img
           alt={props.name}
-          src={props.imagesUrl}
+          src={props.thumbnailUrl}
           className={styles.logo__img}
         />
       </div>

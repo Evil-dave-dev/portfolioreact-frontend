@@ -15,9 +15,12 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 2rem;
   background-color: $bg-primary;
   padding: 2rem;
+  min-width: 24rem;
+  min-height: 24rem;
   max-width: calc(100vw - 4rem);
   max-height: calc(100vh - 4rem);
   &__text {
