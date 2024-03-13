@@ -43,7 +43,7 @@ function Index() {
   ));
 
   const experience = experienceData.map((item, index) => (
-    <div key={index} className={styles.parcours__item}>
+    <div key={index} className={styles.experiences__item}>
       <Card
         name={item.name}
         description={item.description}

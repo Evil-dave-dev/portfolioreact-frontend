@@ -41,7 +41,6 @@
   height: 100vh;
   &__content {
     display: flex;
-    align-self: center;
     gap: 2rem;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
