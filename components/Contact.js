@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/Contact.module.scss";
 import Input from "./Input";
-import Textarea from "./TextArea";
+import Textarea from "./Textarea";
 
 const Contact = () => {
   const formInitialDetails = {
