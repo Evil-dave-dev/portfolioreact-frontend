@@ -29,7 +29,6 @@
   background-color: $bg-secondary;
   position: relative;
   padding: 2rem 0;
-  height: 100vh;
 }
 
 .experiences {
@@ -38,7 +37,6 @@
   display: flex;
   flex-direction: column;
   gap: 10rem;
-  height: 100vh;
   &__content {
     display: flex;
     gap: 2rem;
@@ -77,5 +75,13 @@
     background-color: $bg-primary;
     max-width: 90rem;
     margin: auto;
+  }
+}
+
+.contact {
+  background-color: $bg-primary;
+  padding: 2rem 2rem 4rem;
+  &__title {
+    margin-bottom: 2rem;
   }
 }

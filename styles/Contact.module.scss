@@ -1,0 +1,19 @@
+@import "breakpoints";
+@import "variables";
+
+.container {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  width: 100%;
+}
+
+.button {
+  font-family: "Khand", sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  padding: 1rem 3rem;
+  background-color: $primary;
+  color: #fff;
+  max-width: fit-content;
+}

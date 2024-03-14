@@ -1,0 +1,30 @@
+@import "variables";
+
+.container {
+  width: 100%;
+  position: relative;
+  &__label {
+    position: absolute;
+    left: 1rem;
+    top: 1.3rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.5);
+    user-select: none;
+    cursor: text;
+    background-color: $bg-primary;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  &__input {
+    width: 100%;
+    height: 5rem;
+    padding: 1rem 2rem;
+    border: 1px solid #fff;
+    background: none;
+    border-radius: 0.5rem;
+  }
+}
+
+.focused {
+  top: -1.2rem;
+}

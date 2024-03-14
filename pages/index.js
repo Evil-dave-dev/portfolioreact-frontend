@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Project, Modal, Navbar, Button, Card, Skills } from "../components";
+import {
+  Project,
+  Modal,
+  Navbar,
+  Button,
+  Card,
+  Skills,
+  Contact,
+} from "../components";
 import { JavascriptSvg, ReactSvg, NodeSvg, MongoSvg } from "../svg";
 import { projectData, experienceData, responsiveProject } from "../data/data";
 import "react-multi-carousel/lib/styles.css";
@@ -62,6 +70,7 @@ function Index() {
         <Button content="découvrir" link="#project" />
       </section>
       <section className={styles.projects} id="project">
+        s
         <Carousel infinite={true} responsive={responsiveProject}>
           {project}
         </Carousel>
@@ -86,6 +95,11 @@ function Index() {
           <Skills svg={<MongoSvg width="60" height="60" />} name="MongoDB" />
         </div>
       </section>
+      <section className={styles.contact} id="contact">
+        <h3 className={styles.contact__title}>Contactez moi</h3>
+        <Contact />
+      </section>
+      <footer></footer>
       {projectModal && (
         <Modal closeModal={() => closeModal()} modalData={modalData} />
       )}
