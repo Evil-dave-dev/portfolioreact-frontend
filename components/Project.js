@@ -14,7 +14,7 @@ const Project = (props) => {
         className={styles.container__img}
         loading="lazy"
       />
-      <h2 className={styles.container__name}>{props.name}</h2>
+      <h3 className={styles.container__name}>{props.name}</h3>
     </div>
   );
 };

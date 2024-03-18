@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles/Navbar.module.scss";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("presentation");
+  const [active, setActive] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,13 +36,23 @@ const Navbar = () => {
     return sectionId === activeSection ? { color: "#ff4900" } : {};
   };
 
+  const openNavbar = active
+    ? `${styles.content} ${styles.active}`
+    : `${styles.content}`;
+
+  const handleClick = () => {
+    console.log("click");
+    setActive(!active);
+  };
+
   return (
     <nav className={styles.container}>
       <div className={styles.container__link}>
         <a href="#presentation">
           <img src="logo.png" alt="logo" className={styles.logo} />
         </a>
-        <ul className={styles.content}>
+
+        <ul className={openNavbar}>
           <li>
             <a
               href="#presentation"
@@ -77,6 +90,11 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
+        <FontAwesomeIcon
+          icon={faBars}
+          className={styles.faBars}
+          onClick={handleClick}
+        />
       </div>
       <div className={styles.line}></div>
     </nav>
