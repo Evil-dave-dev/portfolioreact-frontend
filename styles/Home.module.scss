@@ -9,10 +9,7 @@
 }
 
 .presentation {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2rem;
+  @include flex(column, 2rem, center);
   padding: 7.3rem 2rem 4rem;
   background-color: $bg-primary;
   height: 100vh;
@@ -23,27 +20,21 @@
 }
 
 .projects {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  @include flex(column, 2rem, center);
   background-color: $bg-secondary;
   position: relative;
   padding: 2rem 0;
-  gap: 2rem;
   &__title {
     padding: 0 2rem;
   }
 }
 
 .experiences {
+  @include flex(column, 2rem);
   background-color: $bg-primary;
   padding: 2rem 2rem 4rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
   &__content {
-    display: flex;
-    gap: 2rem;
+    @include flex($gap: 2rem);
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     &::-webkit-scrollbar {
@@ -54,8 +45,7 @@
     }
   }
   &__item {
-    display: flex;
-    justify-content: center;
+    @include flex($justify: center);
     flex: 0 0 100%;
     scroll-snap-align: start;
     @include media-breakpoint-up($breakpoint-md) {
@@ -71,10 +61,8 @@
     margin-bottom: 2rem;
   }
   &__content {
-    display: flex;
+    @include flex(row, 1rem, center);
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
     padding: 2rem 0;
     background-color: $bg-primary;
     max-width: 90rem;

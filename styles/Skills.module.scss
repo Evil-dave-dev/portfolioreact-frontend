@@ -2,11 +2,7 @@
 @import "variables";
 
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+  @include flex(column, 1rem, center, center);
   flex: 0 0 12rem;
   @include media-breakpoint-up($breakpoint-md) {
     flex: 0 0 20rem;

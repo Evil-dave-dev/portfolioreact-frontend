@@ -8,6 +8,7 @@
   max-width: fit-content;
   text-decoration: none;
   cursor: pointer;
+  @include transition(all, 0.4s);
   &:focus {
     text-decoration: none;
   }
@@ -15,9 +16,17 @@
 
 .primary {
   background-color: $primary;
+  &:hover {
+    background-color: #fff;
+    color: $primary;
+  }
 }
 
 .secondary {
   color: $primary;
   border: 0.2rem solid $primary;
+  &:hover {
+    background-color: $primary;
+    color: #fff;
+  }
 }

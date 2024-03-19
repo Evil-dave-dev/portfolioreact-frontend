@@ -70,23 +70,17 @@ function Index() {
         <Button content="découvrir" link="#project" />
       </section>
       <section className={styles.projects} id="project">
-        <h2 className={styles.projects__title}>
-          projets <span className={styles.primary}>professionnelles</span>
-        </h2>
+        <h2 className={styles.projects__title}>projets</h2>
         <Carousel infinite={true} responsive={responsiveProject}>
           {project}
         </Carousel>
       </section>
       <section className={styles.experiences} id="experiences">
-        <h2 className={styles.experiences__title}>
-          experiences <span className={styles.primary}>professionnelles</span>
-        </h2>
+        <h2 className={styles.experiences__title}>experiences</h2>
         <div className={styles.experiences__content}>{experience}</div>
       </section>
       <section className={styles.skills} id="skills">
-        <h2 className={styles.skills__title}>
-          competences <span className={styles.primary}>techniques</span>
-        </h2>
+        <h2 className={styles.skills__title}>skills</h2>
         <div className={styles.skills__content}>
           <Skills
             svg={<JavascriptSvg width="60" height="60" />}
@@ -98,7 +92,9 @@ function Index() {
         </div>
       </section>
       <section className={styles.contact} id="contact">
-        <h2 className={styles.contact__title}>Contactez moi</h2>
+        <h2 className={styles.contact__title}>
+          Contactez <span className={styles.primary}>moi</span>
+        </h2>
         <Contact />
       </section>
       <footer></footer>

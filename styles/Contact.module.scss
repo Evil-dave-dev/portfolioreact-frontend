@@ -2,9 +2,7 @@
 @import "variables";
 
 .container {
-  display: flex;
-  gap: 2rem;
-  flex-direction: column;
+  @include flex(column, 2rem);
   width: 100%;
 }
 

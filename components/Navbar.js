@@ -25,10 +25,18 @@ const Navbar = () => {
       });
     };
 
+    const handleClickOutside = (event) => {
+      if (active && !event.target.closest(`.${styles.container}`)) {
+        setActive(false);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
+    document.addEventListener("click", handleClickOutside);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, []);
 
@@ -41,7 +49,6 @@ const Navbar = () => {
     : `${styles.content}`;
 
   const handleClick = () => {
-    console.log("click");
     setActive(!active);
   };
 

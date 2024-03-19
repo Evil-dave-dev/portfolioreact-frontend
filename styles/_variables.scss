@@ -21,3 +21,17 @@ $h6-mobile: 1.4rem;
 $h6-desktop: 1.2rem;
 $p-mobile: 1.4rem;
 $p-desktop: 1.6rem;
+
+// transition
+@mixin transition($property, $duration: 0.3s, $timing-function: ease) {
+  transition: $property $duration $timing-function;
+}
+
+// flex
+@mixin flex($direction: row, $gap: 0, $justify: normal, $align: normal) {
+  display: flex;
+  flex-direction: $direction;
+  gap: $gap;
+  justify-content: $justify;
+  align-items: $align;
+}

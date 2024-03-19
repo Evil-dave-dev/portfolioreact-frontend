@@ -2,19 +2,15 @@
 @import "variables";
 
 .container {
+  @include flex(column, 1rem);
   position: fixed;
   top: 0;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
   background-color: $bg-primary;
   padding: 1rem 2rem 0;
   z-index: 1001;
   &__link {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
+    @include flex(row, 2rem, space-between);
     &::after {
       content: "";
       position: absolute;
@@ -29,18 +25,15 @@
 }
 
 .content {
+  @include transition(all, 0.4s);
+  @include flex(column, 2rem, normal, flex-end);
+  flex-wrap: wrap;
   position: absolute;
   top: -16rem;
   right: 0;
   width: 100%;
   padding: 2rem;
-  display: flex;
   background-color: $bg-primary;
-  flex-direction: column;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  gap: 2rem;
-  transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
   z-index: -1;
   @include media-breakpoint-up($breakpoint-sm) {
     position: static;
