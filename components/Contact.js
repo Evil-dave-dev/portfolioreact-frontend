@@ -13,11 +13,22 @@ const Contact = () => {
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState("Send");
 
+  const handleType = (key, value) => {
+    setFormDetails((prevDetails) => ({
+      ...prevDetails,
+      [key]: value,
+    }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
-    <form className={styles.container}>
-      <Input name="name" />
-      <Input name="email" />
-      <Textarea name="message" />
+    <form className={styles.container} onSubmit={handleSubmit}>
+      <Input name="name" type="text" handleType={handleType} />
+      <Input name="email" type="email" handleType={handleType} />
+      <Textarea name="message" handleType={handleType} />
       <button type="submit" className={styles.button}>
         {buttonText}
       </button>

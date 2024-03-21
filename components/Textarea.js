@@ -15,13 +15,22 @@ const Textarea = (props) => {
     }
   };
 
+  const handleChange = (e) => {
+    const newValue = e.target.value;
+    setValue(newValue);
+    if (props.handleType) {
+      props.handleType(props.name, newValue);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <textarea
         className={styles.container__textarea}
         id={props.name}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={handleChange}
         value={value}
+        maxLength={props.maxLength}
         onFocus={handleFocus}
         onBlur={handleBlur}
         {...props}

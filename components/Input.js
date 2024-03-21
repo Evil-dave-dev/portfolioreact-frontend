@@ -15,12 +15,22 @@ const Input = (props) => {
     }
   };
 
+  const handleChange = (e) => {
+    const newValue = e.target.value;
+    setValue(newValue);
+    if (props.handleType) {
+      props.handleType(props.name, newValue);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <input
         className={styles.container__input}
         id={props.name}
-        onChange={(e) => setValue(e.target.value)}
+        name={props.name}
+        type={props.type}
+        onChange={handleChange}
         value={value}
         onFocus={handleFocus}
         onBlur={handleBlur}
