@@ -18,8 +18,8 @@ const Textarea = (props) => {
   const handleChange = (e) => {
     const newValue = e.target.value;
     setValue(newValue);
-    if (props.handleType) {
-      props.handleType(props.name, newValue);
+    if (props.handleChange) {
+      props.handleChange(props.name, newValue);
     }
   };
 

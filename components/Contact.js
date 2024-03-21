@@ -13,7 +13,7 @@ const Contact = () => {
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState("Send");
 
-  const handleType = (key, value) => {
+  const handleChange = (key, value) => {
     setFormDetails((prevDetails) => ({
       ...prevDetails,
       [key]: value,
@@ -22,13 +22,20 @@ const Contact = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    fetch("https://portfolioreact-backend.vercel.app/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formDetails),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data));
   };
 
   return (
     <form className={styles.container} onSubmit={handleSubmit}>
-      <Input name="name" type="text" handleType={handleType} />
-      <Input name="email" type="email" handleType={handleType} />
-      <Textarea name="message" handleType={handleType} />
+      <Input name="name" type="text" handleChange={handleChange} />
+      <Input name="email" type="email" handleChange={handleChange} />
+      <Textarea name="message" handleChange={handleChange} />
       <button type="submit" className={styles.button}>
         {buttonText}
       </button>
