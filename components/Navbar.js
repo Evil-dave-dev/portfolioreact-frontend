@@ -96,6 +96,15 @@ const Navbar = () => {
               skills
             </a>
           </li>
+          <li>
+            <a
+              href="#contact"
+              className={styles.link}
+              style={setActiveStyle("contact")}
+            >
+              contact
+            </a>
+          </li>
         </ul>
         <FontAwesomeIcon
           icon={faBars}

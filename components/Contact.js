@@ -10,13 +10,12 @@ const Contact = () => {
     message: "",
   };
 
-  const [formDetails, setFormDetails] = useState(formInitialDetails);
-  const [buttonText, setButtonText] = useState("Send");
+  const [formValues, setFormValues] = useState(formInitialDetails);
 
-  const handleChange = (key, value) => {
-    setFormDetails((prevDetails) => ({
-      ...prevDetails,
-      [key]: value,
+  const handleChange = (fieldName, newValue) => {
+    setFormValues((prevState) => ({
+      ...prevState,
+      [fieldName]: newValue,
     }));
   };
 
@@ -25,7 +24,7 @@ const Contact = () => {
     fetch("https://portfolioreact-backend.vercel.app/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formDetails),
+      body: JSON.stringify(formValues),
     })
       .then((response) => response.json())
       .then((data) => console.log(data));
@@ -33,11 +32,25 @@ const Contact = () => {
 
   return (
     <form className={styles.container} onSubmit={handleSubmit}>
-      <Input name="name" type="text" handleChange={handleChange} />
-      <Input name="email" type="email" handleChange={handleChange} />
-      <Textarea name="message" handleChange={handleChange} />
+      <Input
+        name="name"
+        type="text"
+        value={formValues.name}
+        onChange={(newValue) => handleChange("name", newValue)}
+      />
+      <Input
+        name="email"
+        type="email"
+        value={formValues.email}
+        onChange={(newValue) => handleChange("email", newValue)}
+      />
+      <Textarea
+        name="message"
+        value={formValues.message}
+        onChange={(newValue) => handleChange("message", newValue)}
+      />
       <button type="submit" className={styles.button}>
-        {buttonText}
+        send
       </button>
     </form>
   );

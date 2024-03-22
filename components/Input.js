@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "../styles/Input.module.scss";
 
 const Input = (props) => {
-  const [value, setValue] = useState("");
+  const { name, type, value, onChange } = props;
   const [focused, setFocused] = useState(false);
 
   const handleFocus = () => {
@@ -16,33 +16,28 @@ const Input = (props) => {
   };
 
   const handleChange = (e) => {
-    const newValue = e.target.value;
-    setValue(newValue);
-    if (props.handleChange) {
-      props.handleChange(props.name, newValue);
-    }
+    onChange(e.target.value);
   };
 
   return (
     <div className={styles.container}>
       <input
         className={styles.container__input}
-        id={props.name}
-        name={props.name}
-        type={props.type}
-        onChange={handleChange}
+        id={name}
+        name={name}
+        type={type}
         value={value}
+        onChange={handleChange}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        {...props}
       />
       <label
         className={`${styles.container__label} ${
           focused || value ? styles.focused : ""
         }`}
-        htmlFor={props.name}
+        htmlFor={name}
       >
-        {props.name}
+        {name}
       </label>
     </div>
   );
